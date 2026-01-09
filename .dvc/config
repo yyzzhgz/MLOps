@@ -1,0 +1,4 @@
+[core]
+    remote = mydvcremote
+['remote "mydvcremote"']
+    url = s3://cxue-mlops
