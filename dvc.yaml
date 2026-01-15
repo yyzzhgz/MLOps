@@ -1,0 +1,20 @@
+stages:
+  preprocessing:
+    cmd: python src/preprocessing.py
+    deps:
+    - data/raw/dataset.csv
+    outs:
+    - data/processed/clean.csv
+  train:
+    cmd: python src/train.py
+    deps:
+    - data/processed/clean.csv
+    outs:
+    - models/model.pkl
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - data/raw/dataset.csv
+    - models/model.pkl
+    outs:
+    - metrics.json
