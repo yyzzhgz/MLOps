@@ -61,13 +61,6 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
-
-    - name: Setup Kubeconfig
-      run: |
-        mkdir -p $HOME/.kube
-        sudo cp /etc/rancher/k3s/k3s.yaml $HOME/.kube/config
-        sudo chown $(whoami):$(whoami) $HOME/.kube/config
-        chmod 600 $HOME/.kube/config
       
     - name: Setup kubectl
       run: |
